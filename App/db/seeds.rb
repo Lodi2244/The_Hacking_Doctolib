@@ -8,11 +8,15 @@
 require 'faker'
 
 10.times do
+  specialty = Specialty.create!(name: Faker::Name.name)
+end
+
+10.times do
   city = City.create!(city_name: Faker::Address.city)
 end
 
 10.times do
-   Doc.create!(first_name: Faker::Name.name, last_name: Faker::Name.name, specialty: Faker::GameOfThrones.house, zip_code: Faker::Number.number(5), city_id: rand(1..10))
+   Doc.create!(first_name: Faker::Name.name, last_name: Faker::Name.name, specialty_id: rand(1..10), zip_code: Faker::Number.number(5), city_id: rand(1..10))
 end
 
 10.times do
