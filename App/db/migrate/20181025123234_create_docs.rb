@@ -5,6 +5,7 @@ class CreateDocs < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :specialty
       t.integer :zip_code
+      t.references :city, foreign_key: true
 
       t.timestamps
     end
